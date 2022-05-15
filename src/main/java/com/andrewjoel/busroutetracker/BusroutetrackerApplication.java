@@ -1,10 +1,9 @@
-package com.andrewjoel.busroutetracker.core;
+package com.andrewjoel.busroutetracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
-@SpringBootApplication(scanBasePackages = "com.andrewjoel.busroutetracker.core.*", exclude = {HibernateJpaAutoConfiguration.class})
+@SpringBootApplication(scanBasePackages = "com.andrewjoel.busroutetracker.core.*")
 public class BusroutetrackerApplication {
 
     public static void main(String[] args) {

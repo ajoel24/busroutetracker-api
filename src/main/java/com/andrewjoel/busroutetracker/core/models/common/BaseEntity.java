@@ -1,4 +1,4 @@
-package com.andrewjoel.busroutetracker.core.models.base;
+package com.andrewjoel.busroutetracker.core.models.common;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

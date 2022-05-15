@@ -5,14 +5,17 @@ import com.andrewjoel.busroutetracker.core.models.common.Auth;
 import com.andrewjoel.busroutetracker.core.models.common.BaseEntity;
 import com.andrewjoel.busroutetracker.core.models.common.Profile;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import java.io.Serial;
 import java.io.Serializable;
 
 @Entity
-public class Driver extends BaseEntity implements Serializable {
+public class Admin extends BaseEntity implements Serializable {
     @Serial
-    private static final long serialVersionUID = 6281948338372614493L;
+    private static final long serialVersionUID = -3389288464590831268L;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
@@ -22,17 +25,9 @@ public class Driver extends BaseEntity implements Serializable {
     @JoinColumn(name = "profile_id", referencedColumnName = "id")
     private Profile profile;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     @JoinColumn(name = "auth_id", referencedColumnName = "id")
     private Auth auth;
-
-    @ManyToOne
-    @JoinColumn(name = "bus_id")
-    private Bus bus;
-
-    @ManyToOne
-    @JoinColumn(name = "route_id")
-    private Route route;
 
     public Address getAddress() {
         return address;
@@ -56,21 +51,5 @@ public class Driver extends BaseEntity implements Serializable {
 
     public void setAuth(Auth auth) {
         this.auth = auth;
-    }
-
-    public Bus getBus() {
-        return bus;
-    }
-
-    public void setBus(Bus bus) {
-        this.bus = bus;
-    }
-
-    public Route getRoute() {
-        return route;
-    }
-
-    public void setRoute(Route route) {
-        this.route = route;
     }
 }

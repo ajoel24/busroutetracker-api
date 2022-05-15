@@ -1,6 +1,4 @@
-package com.andrewjoel.busroutetracker.core.models.entities;
-
-import com.andrewjoel.busroutetracker.core.models.base.BaseEntity;
+package com.andrewjoel.busroutetracker.core.models.common;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,13 +10,13 @@ public class Address extends BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = -6580937458858621288L;
 
-    @Column
+    @Column(name = "address_line_one")
     private String addressLineOne;
 
-    @Column
+    @Column(name = "address_line_two")
     private String addressLineTwo;
 
-    @Column
+    @Column(name = "address_line_three")
     private String addressLineThree;
 
     @Column
@@ -30,7 +28,7 @@ public class Address extends BaseEntity implements Serializable {
     @Column
     private String city;
 
-    @Column
+    @Column(name = "zip_code")
     private String zipCode;
 
     public String getAddressLineOne() {

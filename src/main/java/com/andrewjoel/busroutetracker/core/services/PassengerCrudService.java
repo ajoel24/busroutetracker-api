@@ -15,31 +15,38 @@ public class PassengerCrudService implements CrudOperations<Passenger> {
 
     @Override
     public Optional<Passenger> findById(Long id) {
-        return Optional.empty();
+        return passengerRepository.findById(id);
     }
 
     @Override
     public Iterable<Passenger> findAll() {
-        return null;
+        return passengerRepository.findAll();
     }
 
     @Override
     public Passenger save(Passenger entity) {
-        return null;
+        return passengerRepository.save(entity);
     }
 
     @Override
     public Iterable<Passenger> saveAll(Iterable<Passenger> entities) {
-        return null;
+        return passengerRepository.saveAll(entities);
     }
 
     @Override
     public void delete(Passenger entity) {
-
+        passengerRepository.delete(entity);
     }
 
     @Override
     public boolean findAndDelete(Long id) {
-        return false;
+        Optional<Passenger> existingPassenger = passengerRepository.findById(id);
+
+        if (existingPassenger.isEmpty()) {
+            return false;
+        }
+
+        passengerRepository.delete(existingPassenger.get());
+        return true;
     }
 }

@@ -1,6 +1,4 @@
-package com.andrewjoel.busroutetracker.core.models.entities;
-
-import com.andrewjoel.busroutetracker.core.models.base.BaseEntity;
+package com.andrewjoel.busroutetracker.core.models.common;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,13 +11,13 @@ public class Profile extends BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = -6609516114820530319L;
 
-    @Column
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column
+    @Column(name = "last_name")
     private String lastName;
 
-    @Column
+    @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
 
     @Column
